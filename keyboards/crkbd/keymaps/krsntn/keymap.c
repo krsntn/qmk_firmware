@@ -18,16 +18,17 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include QMK_KEYBOARD_H
 
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [0] = LAYOUT_split_3x6_3_ex2(
   //,--------------------------------------------------------------.   ,-------------------------------------------------------------.
-       KC_TAB,    KC_Q,    KC_W,    KC_E,LT(3,KC_R),  KC_T,  KC_MEH,      TT(3),    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P, KC_BSPC,
+       KC_TAB,    KC_Q,    KC_W,    KC_E,LT(3,KC_R),  KC_T, KC_CAPS,      TT(3),    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P, KC_BSPC,
   //|--------+--------+--------+--------+--------+--------+--------|   |-------+--------+--------+--------+--------+--------+--------|
-     CTL_T(KC_ESC),SFT_T(KC_A),CTL_T(KC_S),OPT_T(KC_D),CMD_T(KC_F),LT(1,KC_G),KC_HYPR,TT(5),KC_H,RCMD_T(KC_J),OPT_T(KC_K),RCTL_T(KC_L),RSFT_T(KC_SCLN),MEH_T(KC_QUOT),
+     CTL_T(KC_ESC),KC_A,CTL_T(KC_S),OPT_T(KC_D),LT(1,KC_F),KC_G,LCMD(KC_GRAVE),TT(5),KC_H,RCMD_T(KC_J),ROPT_T(KC_K),RCTL_T(KC_L),RSFT_T(KC_SCLN),LT(1,KC_QUOT),
   //|--------+--------+--------+--------+--------+--------+--------'   `-------+--------+--------+--------+--------+--------+--------|
-      KC_LSFT,    KC_Z,LT(5, KC_X), KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, KC_HYPR,
+      KC_LSFT,    KC_Z,LT(5,KC_X),  KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM,  KC_DOT, LT(1,KC_SLSH), KC_HYPR,
   //|--------+--------+--------+--------+--------+--------+--------.  ,--------+--------+--------+--------+--------+--------+--------|
-                                          KC_LOPT, KC_LGUI,   MO(2),   LT(1, KC_ENT),KC_SPC, MO(4)
+                                            MO(6), KC_LGUI,   MO(2),   LT(1,KC_ENT),KC_SPC, MO(4)
                                       //`--------------------------'  `--------------------------'
   ),
 
@@ -51,7 +52,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------+--------'   `-------+--------+--------+--------+--------+--------+--------|
       _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      KC_UNDS, KC_PLUS, KC_LCBR, KC_RCBR, KC_PIPE, KC_TILD,
   //|--------+--------+--------+--------+--------+--------+--------.  ,--------+--------+--------+--------+--------+--------+--------|
-                                          _______, _______, _______,    KC_EXLM,   KC_AT, _______
+                                          _______, _______, _______,    XXXXXXX, XXXXXXX, XXXXXXX
                                       //`--------------------------'  `--------------------------'
   ),
 
@@ -61,7 +62,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------+--------|   |-------+--------+--------+--------+--------+--------+--------|
       _______, _______, _______, _______, _______, _______, _______,    _______, XXXXXXX,    KC_4,    KC_5,    KC_6, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------'   `-------+--------+--------+--------+--------+--------+--------|
-      _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX,    KC_1,    KC_2,    KC_3, XXXXXXX, XXXXXXX,
+      _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX,    KC_1,    KC_2,    KC_3, XXXXXXX, KC_HYPR,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           _______, _______, _______,       KC_0, _______, _______
                                       //`--------------------------'  `--------------------------'
@@ -85,9 +86,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------+--------|   |-------+--------+--------+--------+--------+--------+--------|
       _______, _______, _______, _______, _______, _______, _______,    _______, KC_WH_L, KC_MS_L, KC_MS_D, KC_MS_R, KC_WH_R, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------'   `-------+--------+--------+--------+--------+--------+--------|
-      _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, KC_WH_D, XXXXXXX, KC_BTN2, XXXXXXX, XXXXXXX,
+      _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, KC_WH_D, KC_BTN3, KC_BTN2, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           _______, _______, _______,    KC_BTN1, KC_BTN4, KC_BTN5
+                                      //`--------------------------'  `--------------------------'
+  ),
+
+    [6] = LAYOUT_split_3x6_3_ex2(
+  //,--------------------------------------------------------------.   ,-------------------------------------------------------------.
+      _______, RM_TOGG, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______,    _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+  //|--------+--------+--------+--------+--------+--------+--------|   |-------+--------+--------+--------+--------+--------+--------|
+      _______, RM_NEXT, RM_HUEU, RM_SATU, RM_VALU, RM_SPDU, _______,    _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+  //|--------+--------+--------+--------+--------+--------+--------'   `-------+--------+--------+--------+--------+--------+--------|
+      _______, RM_PREV, RM_HUED, RM_SATD, RM_VALD, RM_SPDD,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
+                                          _______, _______, _______,    XXXXXXX, XXXXXXX, XXXXXXX
                                       //`--------------------------'  `--------------------------'
   )
 };
@@ -97,12 +110,16 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
         case SFT_T(KC_A): // left home row
         case CTL_T(KC_S): // left home row
         case OPT_T(KC_D): // left home row
-        case CMD_T(KC_F): // left home row
+        case CMD_T(KC_G): // left home row
         case RCMD_T(KC_J): // right home row
         case OPT_T(KC_K): // right home row
         case RCTL_T(KC_L): // right home row
         case RSFT_T(KC_SCLN): // right home row
+        case LT(1,KC_F):
+        case LT(1,KC_SLSH):
             return TAPPING_TERM + 60;
+        case LT(1,KC_ENT):
+            return TAPPING_TERM - 50;
         default:
             return TAPPING_TERM;
     }
@@ -119,10 +136,12 @@ uint16_t get_quick_tap_term(uint16_t keycode, keyrecord_t *record) {
 
 bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-        case LT(1, KC_F):
-        case LT(1, KC_ENT):
-        case LT(3, KC_R):
-        case LT(5, KC_X):
+        case LT(1,KC_ENT):
+        case LT(1,KC_F):
+        case LT(1,KC_SLSH):
+        case LT(1,KC_QUOT):
+        case LT(3,KC_R):
+        case LT(5,KC_X):
             // Immediately select the hold action when another key is tapped.
             return true;
         default:
@@ -142,7 +161,9 @@ bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
     }
 }
 
-void keyboard_post_init_user(void) {
-    rgblight_disable(); // Turns off RGB on startup
-}
-
+// void keyboard_post_init_user(void) {
+// #ifdef RGBLIGHT_ENABLE
+//     rgblight_disable(); // Turns off RGB on startup
+// #endif
+// }
+//

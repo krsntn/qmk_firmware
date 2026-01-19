@@ -22,6 +22,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 //#define USE_MATRIX_I2C
 
+// #define MASTER_LEFT
+// #define SPLIT_USB_DETECT
+
 #define QUICK_TAP_TERM 140
 #define QUICK_TAP_TERM_PER_KEY
 #define TAPPING_TERM 160
@@ -35,27 +38,17 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define MOUSEKEY_DELAY 4
 #define MOUSEKEY_INTERVAL 10
 #define MOUSEKEY_MOVE_DELTA 2
-#define MOUSEKEY_MAX_SPEED 35
-#define MOUSEKEY_TIME_TO_MAX 60
+#define MOUSEKEY_MAX_SPEED 40
+#define MOUSEKEY_TIME_TO_MAX 50
 #define MOUSEKEY_WHEEL_DELAY 4
 #define MOUSEKEY_WHEEL_INTERVAL 40
 #define MOUSEKEY_WHEEL_MAX_SPEED 8
 #define MOUSEKEY_WHEEL_TIME_TO_MAX 30
 
+// SPLIT TRANSPORT SETTINGS
+// #define SPLIT_WATCHDOG_ENABLE
+// #define SPLIT_WATCHDOG_TIMEOUT 3000
+// #define TRANSPORT_IDLE_TIMEOUT 100
+// #define SPLIT_MAX_CONNECTION_ERRORS 6
+// #define SPLIT_CONNECTION_CHECK_TIMEOUT 500
 
-/*#ifdef RGBLIGHT_ENABLE*/
-/*    #define RGBLIGHT_EFFECT_BREATHING*/
-/*    #define RGBLIGHT_EFFECT_RAINBOW_MOOD*/
-/*    #define RGBLIGHT_EFFECT_RAINBOW_SWIRL*/
-/*    #define RGBLIGHT_EFFECT_SNAKE*/
-/*    #define RGBLIGHT_EFFECT_KNIGHT*/
-/*    #define RGBLIGHT_EFFECT_CHRISTMAS*/
-/*    #define RGBLIGHT_EFFECT_STATIC_GRADIENT*/
-/*    #define RGBLIGHT_EFFECT_RGB_TEST*/
-/*    #define RGBLIGHT_EFFECT_ALTERNATING*/
-/*    #define RGBLIGHT_EFFECT_TWINKLE*/
-/*    #define RGBLIGHT_LIMIT_VAL 120*/
-/*    #define RGBLIGHT_HUE_STEP 10*/
-/*    #define RGBLIGHT_SAT_STEP 17*/
-/*    #define RGBLIGHT_VAL_STEP 17*/
-/*#endif*/
